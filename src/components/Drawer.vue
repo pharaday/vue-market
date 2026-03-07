@@ -1,23 +1,34 @@
 <script setup lang="ts">
+import DrawerHead from '@/components/DrawerHead.vue'
+import CartItemList from '@/components/CartItemList.vue'
 </script>
 
 <template>
-  <div class="fixed top-0 left-0 w-full h-full bg-black z-10 opacity-70">
-    </div>
-
+  <div class="fixed top-0 left-0 w-full h-full bg-black z-10 opacity-70"></div>
 
   <div class="bg-white w-96 h-full z-20 fixed right-0 top-0 p-8">
+    <DrawerHead />
+    <CartItemList />
 
-    <div class="flex items-center gap-5">
+    <div class="flex flex-col gap-4 mb-5">
+      <div class="flex gap-2">
+        <span>Итого: </span>
+        <div class="flex-1 border-b border-dashed"></div>
+        <b>12 999 $</b>
+      </div>
 
-      <svg class="opacity-30 cursor-pointer rotate-180 group-hover:opacity-100 transition hover:-translate-x-1" width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1 7H14.7143" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M8.71436 1L14.7144 7L8.71436 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <div class="flex gap-2">
+        <span>Налог 5%: </span>
+        <div class="flex-1 border-b border-dashed"></div>
+        <b>1074 $</b>
+      </div>
 
-
-      <h2 class="text-2xl font-bold">Корзина</h2>
-
+      <button
+        disabled=""
+        class="bg-lime-500 w-full rounded-2xl py-2 text-white hover:bg-lime-600 transition active:scale-95 cursor-pointer disabled:opacity-50"
+      >
+        Оформить заказ
+      </button>
     </div>
   </div>
 </template>
